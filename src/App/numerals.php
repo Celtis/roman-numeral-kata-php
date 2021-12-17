@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 interface RomanNumeralGenerator
 {
     public function generate($number);
