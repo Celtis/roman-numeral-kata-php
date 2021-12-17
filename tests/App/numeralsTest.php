@@ -1,18 +1,22 @@
 <?php
 
-require_once "PHPUnit/Autoload.php";
-require_once "numerals.php";
+namespace App;
 
-class NumeralsTest extends PHPUnit_Framework_TestCase 
+use PHPUnit\Framework\TestCase;
+use App\Numerals;
+/**
+ * @covers App\Numerals
+ */
+class NumeralsTest extends TestCase 
 {
 
 	protected $generator;
 
-	protected function setUp()
+	protected function setUp() : void
 	{
-		$this->generator = new Numerals();
+		$this->generator = new Numerals;
 	}
-
+	
 	public function testCheckInvalidInputs()
 	{
 		$this->assertEquals('', $this->generator->generate(0));	

@@ -1,0 +1,19 @@
+{
+    "require": {
+        "phpunit/phpunit": "^9"
+    },
+    "autoload":  {
+        "classmap": ["src/App/"]
+    },
+    "require-dev": {
+        "pcov/clobber": "^2.0"
+    },
+    "test:coverage": [
+        "@putenv XDEBUG_MODE=coverage",
+        "phpunit --color=always --coverage-clover=\"output/code-coverage/clover.xml\""
+      ],
+      "test:coverage-html": [
+        "@putenv XDEBUG_MODE=coverage",
+        "phpunit --color=always --coverage-html=\"output/code-coverage\""
+      ]
+}
